@@ -6,6 +6,7 @@ window.onload = () => {
     startGame();
     drawMouse();
     enableControls();
+    startCountdown();
   };
 };
 
