@@ -5,6 +5,7 @@ window.onload = () => {
   document.getElementById('start-button').onclick = () => {
     startGame();
     drawMouse();
+    drawCheese();
     enableControls();
     startCountdown();
   };
