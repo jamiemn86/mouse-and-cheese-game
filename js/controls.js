@@ -1,25 +1,25 @@
 function moveUp() {
   mouse.y -= 15;
   mouseCoordinates.mouseY = mouse.y;
-  console.log(mouseCoordinates.mouseY);
+  // console.log(mouseCoordinates.mouseY);
 }
 
 function moveDown() {
   mouse.y += 15;
   mouseCoordinates.mouseY = mouse.y;
-  console.log(mouseCoordinates.mouseY);
+  // console.log(mouseCoordinates.mouseY);
 }
 
 function moveRight() {
   mouse.x += 15;
   mouseCoordinates.mouseX = mouse.x;
-  console.log(mouseCoordinates.mouseX);
+  // console.log(mouseCoordinates.mouseX);
 }
 
 function moveLeft() {
   mouse.x -= 15;
   mouseCoordinates.mouseX = mouse.x;
-  console.log(mouseCoordinates.mouseX);
+  // console.log(mouseCoordinates.mouseX);
 }
 
 function enableControls() {

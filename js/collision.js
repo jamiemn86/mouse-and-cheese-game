@@ -8,3 +8,14 @@ function checkMouseCheeseCollision() {
     alert('You got the cheese! Well done!');
   }
 }
+
+const mouseClick = {
+  x: null,
+  y: null
+};
+
+canvas.addEventListener('click', function (event) {
+  mouseClick.x = event.x;
+  mouseClick.y = event.y;
+  console.log(event);
+});

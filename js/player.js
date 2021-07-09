@@ -11,7 +11,9 @@ const mouse = {
 function drawMouse() {
   const mouseOnScreen = {
     draw: function () {
-      ctx.drawImage(mouse.img, mouse.x, mouse.y, 50, 90);
+      ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+      loadBackground();
+      ctx.drawImage(mouse.img, mouse.x, mouse.y, 40, 70);
     }
   };
   mouseOnScreen.draw();
