@@ -1,17 +1,17 @@
 function moveUp() {
-  mouse.y -= 5;
+  mouse.y -= 15;
 }
 
 function moveDown() {
-  mouse.y += 5;
+  mouse.y += 15;
 }
 
 function moveRight() {
-  mouse.x += 5;
+  mouse.x += 15;
 }
 
 function moveLeft() {
-  mouse.x -= 5;
+  mouse.x -= 15;
 }
 
 function enableControls() {
