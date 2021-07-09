@@ -15,6 +15,7 @@ function drawMouse() {
     }
   };
   mouseOnScreen.draw();
+  checkMouseCheeseCollision();
   requestAnimationFrame(drawMouse);
 }
 

@@ -1,5 +1,5 @@
 function startCountdown() {
-  let counter = 25;
+  let counter = 45;
   setInterval(function () {
     counter--;
     if (counter >= 0) {
