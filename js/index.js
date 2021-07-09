@@ -18,6 +18,7 @@ function startGame() {
 function loadBackground() {
   const img = new Image();
   img.src = '/images/stonetilesbackground.png';
+  ctx.globalAlpha = 0.2;
   const backgroundImage = {
     img: img,
     x: 0,
@@ -27,4 +28,5 @@ function loadBackground() {
   };
   backgroundImage.draw();
   requestAnimationFrame(loadBackground);
+  ctx.globalAlpha = 1;
 }
