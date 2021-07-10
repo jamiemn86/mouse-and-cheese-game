@@ -7,7 +7,8 @@ mouseImg.src = '/images/mouseplayer.png';
 const mouse = {
   img: mouseImg,
   x: 50,
-  y: 400
+  y: 400,
+  radius: 28
 };
 
 function drawMouse() {
@@ -16,6 +17,13 @@ function drawMouse() {
       ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
       loadBackground();
       ctx.drawImage(mouse.img, mouse.x, mouse.y, 40, 70);
+      // grey circle around mouse for collision detection
+      ctx.strokeStyle = 'grey';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(mouse.x + 20, mouse.y + 25, mouse.radius, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.stroke();
     }
   };
   mouseOnScreen.draw();
@@ -69,7 +77,7 @@ class Cat {
   constructor() {
     this.x = Math.random() * 500;
     this.y = 450;
-    this.radius = 50;
+    this.radius = 40;
     this.speed = Math.random() * 4 + 1;
     this.distance;
   }
