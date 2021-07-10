@@ -76,7 +76,7 @@ const catsArray = [];
 
 class Cat {
   constructor() {
-    this.x = Math.random() * 500;
+    this.x = Math.random() * 400 + 100;
     this.y = 450;
     this.radius = 40;
     this.speed = Math.random() * 4 + 1;
