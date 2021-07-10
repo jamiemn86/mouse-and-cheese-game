@@ -8,6 +8,7 @@ function startCountdown() {
     }
     if (counter === 0) {
       alert('Sorry, you ran out of time');
+      catsArray.length = 0;
       clearInterval(counter);
     }
   }, 1000);

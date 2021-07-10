@@ -47,6 +47,14 @@ function drawCheese() {
 
 // Cats
 
+const catImg = new Image();
+
+catImg.src = '/images/cat.png';
+
+const cat = {
+  img: catImg
+};
+
 let gameFrame = 0;
 
 function animateCat() {
@@ -62,24 +70,25 @@ class Cat {
     this.x = Math.random() * 500;
     this.y = 450;
     this.radius = 50;
-    this.speed = Math.random() * 5 + 1;
+    this.speed = Math.random() * 4 + 1;
     this.distance;
   }
   update() {
     this.y -= this.speed;
   }
   draw() {
-    ctx.fillStyle = 'blue';
+    ctx.drawImage(cat.img, this.x - 40, this.y - 40, 80, 80);
+    ctx.strokeStyle = 'grey';
+    ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fill();
     ctx.closePath();
     ctx.stroke();
   }
 }
 
 function handleCats() {
-  if (gameFrame % 100 == 0) {
+  if (gameFrame % 150 == 0) {
     catsArray.push(new Cat());
   }
   for (let i = 0; i < catsArray.length; i++) {
