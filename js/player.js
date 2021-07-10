@@ -118,46 +118,40 @@ const trapImg = new Image();
 
 trapImg.src = '/images/mousetrap.png';
 
-const trapOne = {
-  img: trapImg,
-  x: 200,
-  y: 200
+const trap = {
+  img: trapImg
 };
 
-const trapTwo = {
-  img: trapImg,
-  x: 170,
-  y: 400
-};
+class Trap {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.radius = 50;
+    const dx = this.x - mouse.x;
+    const dy = this.y - mouse.y;
+    this.distance = Math.sqrt(dx * dx + dy * dy);
+  }
+  draw() {
+    ctx.drawImage(trap.img, this.x - 40, this.y - 40, 40, 40);
+    ctx.strokeStyle = 'grey';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.closePath();
+    ctx.stroke();
+  }
+}
 
-const trapThree = {
-  img: trapImg,
-  x: 100,
-  y: 200
-};
-
-const trapFour = {
-  img: trapImg,
-  x: 400,
-  y: 400
-};
-
-const trapFive = {
-  img: trapImg,
-  x: 170,
-  y: 50
-};
-
-function drawTraps() {
-  const trapsOnScreen = {
-    draw: function () {
-      ctx.drawImage(trapOne.img, trapOne.x, trapOne.y, 50, 50);
-      ctx.drawImage(trapTwo.img, trapTwo.x, trapTwo.y, 50, 50);
-      ctx.drawImage(trapThree.img, trapThree.x, trapThree.y, 50, 50);
-      ctx.drawImage(trapFour.img, trapFour.x, trapFour.y, 50, 50);
-      ctx.drawImage(trapFive.img, trapFive.x, trapFive.y, 50, 50);
-    }
-  };
-  trapsOnScreen.draw();
-  requestAnimationFrame(drawTraps);
+function loadTraps() {
+  const testTrap = new Trap(200, 200);
+  const testTrapTwo = new Trap(100, 200);
+  const testTrapThree = new Trap(400, 200);
+  const testTrapFour = new Trap(150, 100);
+  const testTrapFive = new Trap(100, 400);
+  testTrap.draw();
+  testTrapTwo.draw();
+  testTrapThree.draw();
+  testTrapFour.draw();
+  testTrapFive.draw();
+  requestAnimationFrame(loadTraps);
 }
