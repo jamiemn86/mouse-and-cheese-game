@@ -76,7 +76,7 @@ const catsArray = [];
 
 class Cat {
   constructor() {
-    this.x = Math.random() * 400 + 100;
+    this.x = Math.random() * 350 + 150;
     this.y = 450;
     this.radius = 40;
     this.speed = Math.random() * 4 + 1;
@@ -110,4 +110,54 @@ function handleCats() {
       catsArray.splice(i, 1);
     }
   }
+}
+
+// Mouse traps
+
+const trapImg = new Image();
+
+trapImg.src = '/images/mousetrap.png';
+
+const trapOne = {
+  img: trapImg,
+  x: 200,
+  y: 200
+};
+
+const trapTwo = {
+  img: trapImg,
+  x: 170,
+  y: 400
+};
+
+const trapThree = {
+  img: trapImg,
+  x: 100,
+  y: 200
+};
+
+const trapFour = {
+  img: trapImg,
+  x: 400,
+  y: 400
+};
+
+const trapFive = {
+  img: trapImg,
+  x: 170,
+  y: 50
+};
+
+function drawTraps() {
+  const trapsOnScreen = {
+    draw: function () {
+      ctx.drawImage(trapOne.img, trapOne.x, trapOne.y, 50, 50);
+      ctx.drawImage(trapTwo.img, trapTwo.x, trapTwo.y, 50, 50);
+      ctx.drawImage(trapThree.img, trapThree.x, trapThree.y, 50, 50);
+      ctx.drawImage(trapFour.img, trapFour.x, trapFour.y, 50, 50);
+      ctx.drawImage(trapFive.img, trapFive.x, trapFive.y, 50, 50);
+    }
+  };
+  trapsOnScreen.draw();
+  requestAnimationFrame(drawTraps);
 }

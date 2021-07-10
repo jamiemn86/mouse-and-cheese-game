@@ -9,6 +9,7 @@ window.onload = () => {
     enableControls();
     startCountdown();
     animateCat();
+    drawTraps();
   };
 };
 
