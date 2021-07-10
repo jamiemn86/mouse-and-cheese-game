@@ -8,6 +8,7 @@ window.onload = () => {
     drawCheese();
     enableControls();
     startCountdown();
+    animateCat();
   };
 };
 

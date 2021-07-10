@@ -1,3 +1,5 @@
+// Mouse
+
 const mouseImg = new Image();
 
 mouseImg.src = '/images/mouseplayer.png';
@@ -21,6 +23,8 @@ function drawMouse() {
   requestAnimationFrame(drawMouse);
 }
 
+// Cheese
+
 const cheeseImg = new Image();
 
 cheeseImg.src = '/images/cheese.png';
@@ -39,4 +43,47 @@ function drawCheese() {
   };
   cheeseOnScreen.draw();
   requestAnimationFrame(drawCheese);
+}
+
+// Cats
+
+let gameFrame = 0;
+
+function animateCat() {
+  handleCats();
+  gameFrame++;
+  requestAnimationFrame(animateCat);
+}
+
+const catsArray = [];
+
+class Cat {
+  constructor() {
+    this.x = Math.random() * 500;
+    this.y = 450;
+    this.radius = 50;
+    this.speed = Math.random() * 5 + 1;
+    this.distance;
+  }
+  update() {
+    this.y -= this.speed;
+  }
+  draw() {
+    ctx.fillStyle = 'blue';
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.closePath();
+    ctx.stroke();
+  }
+}
+
+function handleCats() {
+  if (gameFrame % 100 == 0) {
+    catsArray.push(new Cat());
+  }
+  for (let i = 0; i < catsArray.length; i++) {
+    catsArray[i].update();
+    catsArray[i].draw();
+  }
 }
