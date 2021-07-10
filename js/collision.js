@@ -19,3 +19,11 @@ canvas.addEventListener('click', function (event) {
   mouseClick.y = event.y;
   console.log(event);
 });
+
+function checkMouseCatCollision() {
+  for (let i = 0; i < catsArray.length; i++) {
+    if (catsArray[i].distance < catsArray[i].radius + mouse.radius) {
+      alert('You were eaten by a cat, you lose!');
+    }
+  }
+}

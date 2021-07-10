@@ -28,6 +28,7 @@ function drawMouse() {
   };
   mouseOnScreen.draw();
   checkMouseCheeseCollision();
+  checkMouseCatCollision();
   requestAnimationFrame(drawMouse);
 }
 
@@ -83,6 +84,9 @@ class Cat {
   }
   update() {
     this.y -= this.speed;
+    const dx = this.x - mouse.x;
+    const dy = this.y - mouse.y;
+    this.distance = Math.sqrt(dx * dx + dy * dy);
   }
   draw() {
     ctx.drawImage(cat.img, this.x - 40, this.y - 40, 80, 80);
@@ -102,5 +106,8 @@ function handleCats() {
   for (let i = 0; i < catsArray.length; i++) {
     catsArray[i].update();
     catsArray[i].draw();
+    if (catsArray[i].y < 0) {
+      catsArray.splice(i, 1);
+    }
   }
 }
