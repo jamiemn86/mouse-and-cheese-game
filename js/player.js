@@ -8,7 +8,7 @@ const mouse = {
   img: mouseImg,
   x: 50,
   y: 400,
-  radius: 22
+  radius: 15
 };
 
 function drawMouse() {
@@ -79,7 +79,7 @@ class Cat {
   constructor() {
     this.x = Math.random() * 350 + 150;
     this.y = 450;
-    this.radius = 40;
+    this.radius = 35;
     this.speed = Math.random() * 4 + 1;
     this.distance;
   }
@@ -129,7 +129,7 @@ class Trap {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.radius = 10;
+    this.radius = 8;
     const dx = this.x - mouse.x;
     const dy = this.y - mouse.y;
     this.distance = Math.sqrt(dx * dx + dy * dy);
@@ -147,10 +147,10 @@ class Trap {
 
 function loadTraps() {
   const testTrap = new Trap(200, 200);
-  const testTrapTwo = new Trap(100, 200);
+  const testTrapTwo = new Trap(50, 200);
   const testTrapThree = new Trap(400, 200);
-  const testTrapFour = new Trap(150, 100);
-  const testTrapFive = new Trap(100, 300);
+  const testTrapFour = new Trap(400, 400);
+  const testTrapFive = new Trap(80, 300);
   trapsArray.push(
     testTrap,
     testTrapTwo,

@@ -26,9 +26,12 @@ canvas.addEventListener('click', function (event) {
 
 // Mouse cat collision check
 
+let catAudio = new Audio('/sound/catmew.wav');
+
 function checkMouseCatCollision() {
   for (let i = 0; i < catsArray.length; i++) {
     if (catsArray[i].distance < catsArray[i].radius + mouse.radius) {
+      catAudio.play();
       alert('You were eaten by a cat, you lose!');
     }
   }
