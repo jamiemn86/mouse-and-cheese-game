@@ -23,7 +23,7 @@ function drawMouse() {
       ctx.beginPath();
       ctx.arc(mouse.x + 20, mouse.y + 25, mouse.radius, 0, Math.PI * 2);
       ctx.closePath();
-      ctx.stroke();
+      // ctx.stroke();
     }
   };
   mouseOnScreen.draw();
@@ -95,7 +95,7 @@ class Cat {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
     ctx.closePath();
-    ctx.stroke();
+    // ctx.stroke();
   }
 }
 
@@ -126,19 +126,19 @@ class Trap {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.radius = 50;
+    this.radius = 20;
     const dx = this.x - mouse.x;
     const dy = this.y - mouse.y;
     this.distance = Math.sqrt(dx * dx + dy * dy);
   }
   draw() {
-    ctx.drawImage(trap.img, this.x - 40, this.y - 40, 40, 40);
+    ctx.drawImage(trap.img, this.x - 22, this.y - 22, 40, 40);
     ctx.strokeStyle = 'grey';
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
     ctx.closePath();
-    ctx.stroke();
+    // ctx.stroke();
   }
 }
 
@@ -147,7 +147,7 @@ function loadTraps() {
   const testTrapTwo = new Trap(100, 200);
   const testTrapThree = new Trap(400, 200);
   const testTrapFour = new Trap(150, 100);
-  const testTrapFive = new Trap(100, 400);
+  const testTrapFive = new Trap(100, 300);
   testTrap.draw();
   testTrapTwo.draw();
   testTrapThree.draw();
