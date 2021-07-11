@@ -8,7 +8,7 @@ const mouse = {
   img: mouseImg,
   x: 50,
   y: 400,
-  radius: 28
+  radius: 22
 };
 
 function drawMouse() {
@@ -29,6 +29,7 @@ function drawMouse() {
   mouseOnScreen.draw();
   checkMouseCheeseCollision();
   checkMouseCatCollision();
+  checkMouseTrapCollision();
   requestAnimationFrame(drawMouse);
 }
 
@@ -114,6 +115,8 @@ function handleCats() {
 
 // Mouse traps
 
+const trapsArray = [];
+
 const trapImg = new Image();
 
 trapImg.src = '/images/mousetrap.png';
@@ -126,7 +129,7 @@ class Trap {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.radius = 20;
+    this.radius = 10;
     const dx = this.x - mouse.x;
     const dy = this.y - mouse.y;
     this.distance = Math.sqrt(dx * dx + dy * dy);
@@ -148,6 +151,13 @@ function loadTraps() {
   const testTrapThree = new Trap(400, 200);
   const testTrapFour = new Trap(150, 100);
   const testTrapFive = new Trap(100, 300);
+  trapsArray.push(
+    testTrap,
+    testTrapTwo,
+    testTrapThree,
+    testTrapFour,
+    testTrapFive
+  );
   testTrap.draw();
   testTrapTwo.draw();
   testTrapThree.draw();
