@@ -81,11 +81,3 @@ function hitTrapMessage() {
     catsArray[i].speed = 0;
   }
 }
-
-function runOutofTime() {
-  ctx.clearRect(0, 0, 500, 700);
-  ctx.font = '20px Lucida Sans';
-  ctx.textAlign = 'center';
-  ctx.fillStyle = 'black';
-  ctx.fillText('Sorry, you ran out of time!', 250, 150);
-}
