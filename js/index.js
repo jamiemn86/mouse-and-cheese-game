@@ -40,3 +40,35 @@ function loadBackground() {
   requestAnimationFrame(loadBackground);
   ctx.globalAlpha = 1;
 }
+
+function winMessage() {
+  ctx.clearRect(0, 0, 500, 700);
+  ctx.font = '20px Lucida Sans';
+  ctx.textAlign = 'center';
+  ctx.fillStyle = 'black';
+  ctx.fillText('You got the cheese! Well done!', 250, 150);
+}
+
+function hitCatMessage() {
+  ctx.clearRect(0, 0, 500, 700);
+  ctx.font = '20px Lucida Sans';
+  ctx.textAlign = 'center';
+  ctx.fillStyle = 'black';
+  ctx.fillText('A cat ate you! Too bad!', 250, 150);
+}
+
+function hitTrapMessage() {
+  ctx.clearRect(0, 0, 500, 700);
+  ctx.font = '20px Lucida Sans';
+  ctx.textAlign = 'center';
+  ctx.fillStyle = 'black';
+  ctx.fillText('You got caught in a trap! Too bad!', 250, 150);
+}
+
+function runOutofTime() {
+  ctx.clearRect(0, 0, 500, 700);
+  ctx.font = '20px Lucida Sans';
+  ctx.textAlign = 'center';
+  ctx.fillStyle = 'black';
+  ctx.fillText('Sorry, you ran out of time!', 250, 150);
+}

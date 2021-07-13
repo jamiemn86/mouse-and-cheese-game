@@ -7,7 +7,7 @@ function startCountdown() {
       span.innerHTML = `Countdown timer: ${counter} seconds`;
     }
     if (counter === 0) {
-      alert('Sorry, you ran out of time');
+      runOutofTime();
       clearInterval(counter);
     }
   }, 1000);

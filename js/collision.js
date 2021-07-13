@@ -7,7 +7,7 @@ let mouseCoordinates = {
 
 function checkMouseCheeseCollision() {
   if (mouseCoordinates.mouseX > 380 && mouseCoordinates.mouseY < 85) {
-    alert('You got the cheese! Well done!');
+    winMessage();
   }
 }
 
@@ -32,7 +32,7 @@ function checkMouseCatCollision() {
   for (let i = 0; i < catsArray.length; i++) {
     if (catsArray[i].distance < catsArray[i].radius + mouse.radius) {
       catAudio.play();
-      alert('You were eaten by a cat, you lose!');
+        hitCatMessage();
     }
   }
 }
@@ -42,7 +42,7 @@ function checkMouseCatCollision() {
 function checkMouseTrapCollision() {
   for (let i = 0; i < trapsArray.length; i++) {
     if (trapsArray[i].distance < trapsArray[i].radius + mouse.radius) {
-      alert('You were caught in a trap, you lose!');
+      hitTrapMessage();
     }
   }
 }
