@@ -17,6 +17,7 @@ function startCountdown() {
       counterStopped.push(counter);
       firstCounterStopped = counterStopped[0];
       span.innerHTML = `Countdown timer: ${firstCounterStopped} seconds`;
+      clearInterval(counter);
     }
   }, 1000);
 }
