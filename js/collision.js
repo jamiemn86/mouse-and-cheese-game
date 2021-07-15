@@ -54,7 +54,11 @@ function winMessage() {
   ctx.font = '20px Lucida Sans';
   ctx.textAlign = 'center';
   ctx.fillStyle = 'black';
-  ctx.fillText('You got the cheese! Well done!', 250, 150);
+  ctx.fillText(
+    `Congrats, you got the cheese in ${firstCounterStopped} seconds!`,
+    250,
+    150
+  );
   for (let i = 0; i < catsArray.length; i++) {
     catsArray[i].speed = 0;
   }
