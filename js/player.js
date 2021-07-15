@@ -133,7 +133,7 @@ class Trap {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.radius = 8;
+    this.radius = 12;
     const dx = this.x - mouse.x;
     const dy = this.y - mouse.y;
     this.distance = Math.sqrt(dx * dx + dy * dy);
