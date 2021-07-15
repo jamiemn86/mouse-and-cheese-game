@@ -78,7 +78,7 @@ const catsArray = [];
 class Cat {
   constructor() {
     this.x = Math.random() * 350 + 150;
-    this.y = 450;
+    this.y = 580;
     this.radius = 35;
     this.speed = Math.random() * 4 + 1;
     this.distance;
@@ -90,13 +90,17 @@ class Cat {
     this.distance = Math.sqrt(dx * dx + dy * dy);
   }
   draw() {
-    ctx.drawImage(cat.img, this.x - 40, this.y - 40, 80, 80);
-    ctx.strokeStyle = 'grey';
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.closePath();
-    // ctx.stroke();
+    if (this.y < 450) {
+      ctx.drawImage(cat.img, this.x - 40, this.y - 40, 80, 80);
+      ctx.strokeStyle = 'grey';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.closePath();
+      // ctx.stroke();
+    } else {
+      return;
+    }
   }
 }
 
