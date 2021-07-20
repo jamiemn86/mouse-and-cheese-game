@@ -150,22 +150,28 @@ class Trap {
 }
 
 function loadTraps() {
-  const testTrap = new Trap(200, 200);
-  const testTrapTwo = new Trap(50, 200);
-  const testTrapThree = new Trap(400, 200);
-  const testTrapFour = new Trap(400, 400);
-  const testTrapFive = new Trap(80, 300);
+  const trapOne = new Trap(200, 200);
+  const trapTwo = new Trap(50, 200);
+  const trapThree = new Trap(400, 200);
+  const trapFour = new Trap(400, 400);
+  const trapFive = new Trap(80, 300);
+  const trapSix = new Trap(200, 50);
+  const trapSeven = new Trap(300, 240);
   trapsArray.push(
-    testTrap,
-    testTrapTwo,
-    testTrapThree,
-    testTrapFour,
-    testTrapFive
+    trapOne,
+    trapTwo,
+    trapThree,
+    trapFour,
+    trapFive,
+    trapSix,
+    trapSeven
   );
-  testTrap.draw();
-  testTrapTwo.draw();
-  testTrapThree.draw();
-  testTrapFour.draw();
-  testTrapFive.draw();
+  trapOne.draw();
+  trapTwo.draw();
+  trapThree.draw();
+  trapFour.draw();
+  trapFive.draw();
+  trapSix.draw();
+  trapSeven.draw();
   requestAnimationFrame(loadTraps);
 }
